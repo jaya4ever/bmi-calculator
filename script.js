@@ -10,18 +10,21 @@ function calculateBMI() {
 
   if (height === "" || isNaN(height)) {
     alert("Provide a valid number !");
-    
-  }else if (weight === "" || isNaN(weight)) {
+  } else if (weight === "" || isNaN(weight)) {
     alert("Provide a valid number !");
   }
- 
-   let bmi = (weight / Math.pow( (height/100), 2 )).toFixed(1);
 
-  if (bmi < 18.6)
+  let bmi = parseFloat(weight) / (parseFloat(height) / 100) ** 2;
+
+  if (bmi < 18.6) {
     result.innerHTML = `You are Under Weight, Start Eating : Your BMI is<span>${bmi}</span>`;
-  else if (bmi >= 18.6 && bmi < 24.9)
+    result.style.color = "#ffc44d";
+  } else if (bmi >= 18.6 && bmi < 24.9) {
     result.innerHTML = `Your weight is Normal : Your BMI is <span>${bmi}</span>`;
-  else
+    result.style.color = "#0be881";
+  } else {
     result.innerHTML = `You are Over Weight, Don't eat much : Your BMI is <span>${bmi}</span>`;
+    result.style.color = "#ff884d";
+  }
 }
 button.addEventListener("click", calculateBMI);
