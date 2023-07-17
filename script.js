@@ -9,11 +9,14 @@ function calculateBMI() {
   let result = document.querySelector("#result");
 
   if (!height === "" || isNaN(height)) {
-    alert("Provide a valid number !");
-  } else if (!weight === "" || isNaN(weight)) {
-    alert("Provide a valid number !");
-  }else{
-
+    alert("Provide a valid height number !");
+    return;
+  } 
+  if (!weight === "" || isNaN(weight)) {
+    alert("Provide a valid weight number !");
+    return;
+  }
+ else{
   let bmi = (weight / ((height * height) / 10000)).toFixed(2);
 
   if (bmi < 18.6) {
@@ -31,4 +34,5 @@ function calculateBMI() {
   }
 }
 }
+
 button.addEventListener("click", calculateBMI);
