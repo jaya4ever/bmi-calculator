@@ -1,0 +1,13 @@
+#container{
+    border: 2px solid #000;
+    width: 350px;
+    height: 350px;
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 100px auto;
+    padding: 3px;
+
+}
